@@ -27,9 +27,9 @@ batctl if add vx${vxlanid}
 }
 
 for gw in $GWS; do
-	HOSTNAME="t-gw-$gw"
+	HOSTNAME="gw-$gw.ffks.de"
 	REALHOSTNAME="$(hostname)"
-	REALHOSTNAMENUMBER="$(echo $REALHOSTNAME|rev|cut -d'-' -f1|rev)"
+	REALHOSTNAMENUMBER="$(echo $REALHOSTNAME|rev|cut -d'-' -f1|rev|cut -d'.' -f1)"
 	#echo "My local Hostname should be: $REALHOSTNAME; Connecting to: $HOSTNAME"
 	#echo "Local: $REALHOSTNAMENUMBER Remote: $gw"
 
